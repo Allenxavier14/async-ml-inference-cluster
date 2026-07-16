@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  inference_node:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - WORKER_TIMEOUT=30
+      - MODEL_VERSION=v2.4.1
+    deploy:
+      replicas: 3
